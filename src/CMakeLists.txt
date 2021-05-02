@@ -1,0 +1,1 @@
+add_library(src json_schema.cpp schema_json.cpp)

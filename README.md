@@ -2,7 +2,7 @@
 This respository intends to store the code to investigate the Apache Arrow framework.
 
 # Purpose
-Implement a functionality to convert an arrow::schema instance to JSON string and vice versa. An executable program is also created to test the functionality.
+Implement a functionality to convert an arrow::schema instance to JSON string and vice versa. An executable program is also created to test the functionality. The source code is refactored and standardized with the help of clang-format.
 
 # Development environment
 Ubuntu 20.04 WSL (Ubuntu on Windows 10)

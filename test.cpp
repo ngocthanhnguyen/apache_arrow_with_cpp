@@ -15,8 +15,8 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#include "../src/json_schema.h"
-#include "../src/schema_json.h"
+#include "src/json_schema.h"
+#include "src/schema_json.h"
 #include <cassert>
 
 /*

@@ -17,20 +17,20 @@
 
 #pragma once
 
-#include <nlohmann/json.hpp>
-#include <arrow/dataset/dataset.h>
-#include <vector>
-#include <string>
-#include <iostream>
 #include <algorithm>
+#include <arrow/dataset/dataset.h>
+#include <iostream>
 #include <memory>
+#include <nlohmann/json.hpp>
+#include <string>
+#include <vector>
 
 class JSONSchema {
- private:
+private:
   std::string m_jsonString;
   std::vector<std::string> extractFields();
 
- public:
-  JSONSchema(const std::string& jsonString);
+public:
+  JSONSchema(const std::string &jsonString);
   std::shared_ptr<arrow::Schema> convert2Schema();
 };

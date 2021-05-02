@@ -15,9 +15,9 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#include <cassert>
 #include "../src/json_schema.h"
 #include "../src/schema_json.h"
+#include <cassert>
 
 /*
   TEST 1: Convert an arrow::schema instance to JSON string
@@ -42,12 +42,14 @@ int Schema2Json() {
   TEST 2: Convert a JSON string to arrow::schema instance
 */
 int Json2Schema() {
-  std::cout << "TEST: Convert a JSON string to arrow::schema instance" << std::endl;
+  std::cout << "TEST: Convert a JSON string to arrow::schema instance"
+            << std::endl;
 
   // input test data
   std::string inputJson = "{\"field1\":[],\"field2\":[]}";
-  std::shared_ptr<arrow::Schema> schema = arrow::schema({arrow::field("field1", arrow::int64()),
-                                                         arrow::field("field2", arrow::int64())});
+  std::shared_ptr<arrow::Schema> schema =
+      arrow::schema({arrow::field("field1", arrow::int64()),
+                     arrow::field("field2", arrow::int64())});
 
   // impl.
   JSONSchema oJsonSchema(inputJson);
@@ -60,15 +62,19 @@ int Json2Schema() {
 }
 
 /*
-  TEST 3: Convert an arrow::schema instance to JSON string and back to arrow::schema
+  TEST 3: Convert an arrow::schema instance to JSON string and back to
+  arrow::schema
 */
 int Schema2Json2Schema() {
-  std::cout << "TEST: Convert an arrow::schema instance to JSON string and back to arrow::schema" << std::endl;
+  std::cout << "TEST: Convert an arrow::schema instance to JSON string and "
+               "back to arrow::schema"
+            << std::endl;
 
   // input test data
   std::string inputJson = "{\"field1\":[],\"field2\":[]}";
-  std::shared_ptr<arrow::Schema> schema = arrow::schema({arrow::field("field1", arrow::int64()),
-                                                         arrow::field("field2", arrow::int64())});
+  std::shared_ptr<arrow::Schema> schema =
+      arrow::schema({arrow::field("field1", arrow::int64()),
+                     arrow::field("field2", arrow::int64())});
 
   // impl
   SchemaJSON oSchemaJSON(inputJson);
@@ -84,10 +90,13 @@ int Schema2Json2Schema() {
 }
 
 /*
-  TEST 4: Convert a JSON string to arrow::schema instance and back to JSON string
+  TEST 4: Convert a JSON string to arrow::schema instance and back to JSON
+  string
 */
 int Json2Schema2Json() {
-  std::cout << "TEST: Convert a JSON string to arrow::schema instance and back to JSON string" << std::endl;
+  std::cout << "TEST: Convert a JSON string to arrow::schema instance and back "
+               "to JSON string"
+            << std::endl;
 
   // input test data
   std::string inputJson = "{\"field1\":[],\"field2\":[]}";
@@ -105,7 +114,7 @@ int Json2Schema2Json() {
   return 0;
 }
 
-int main(int agrc, char** agrv) {
+int main(int agrc, char **agrv) {
   if (agrc < 3) {
     std::cerr << "Not enough parameters" << std::endl;
     return 0;

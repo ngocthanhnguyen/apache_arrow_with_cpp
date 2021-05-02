@@ -17,20 +17,20 @@
 
 #pragma once
 
-#include <nlohmann/json.hpp>
 #include <arrow/dataset/dataset.h>
 #include <memory>
+#include <nlohmann/json.hpp>
 #include <string>
 #include <vector>
 
 class SchemaJSON {
- private:
+private:
   std::shared_ptr<arrow::Schema> m_schema;
-  int init(const std::vector<std::string>& fields);
-  std::vector<std::string> extractFields(const std::string& json);
+  int init(const std::vector<std::string> &fields);
+  std::vector<std::string> extractFields(const std::string &json);
 
- public:
-  explicit SchemaJSON(const std::string& json);
+public:
+  explicit SchemaJSON(const std::string &json);
   explicit SchemaJSON(const std::shared_ptr<arrow::Schema> &ptrSchema);
   ~SchemaJSON();
   std::string exportJson();

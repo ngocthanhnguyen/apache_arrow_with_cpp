@@ -24,6 +24,7 @@ https://github.com/thanhnn-uit-13/apache_arrow_with_c- # this project
 apache_arrow_with_c-
 mkdir build
 cmake ..
+make
 ```
 
 # Using the program
